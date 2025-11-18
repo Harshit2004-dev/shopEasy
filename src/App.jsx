@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Routes, Route } from "react-router-dom"
+import {  Routes, Route, Navigate } from "react-router-dom";
 import './App.css'
 import Header from './components/Header'
 import Home from './pages/Home'
@@ -21,6 +21,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<About />} />
         <Route path="/product_details/:id" element={<ProductDetails/>} />
+        <Route path="*" element={<Navigate to="/" />} />     {/* any unknown route goes home */}
       </Routes>
     </CartProvider>  
     </>
