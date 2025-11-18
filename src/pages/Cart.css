@@ -1,0 +1,11 @@
+.cart-item {
+  display: flex;
+  gap: 15px;
+}
+
+@media (max-width: 480px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: center;
+  }
+}
