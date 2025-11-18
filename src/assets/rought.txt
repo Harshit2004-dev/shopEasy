@@ -1,0 +1,96 @@
+
+=======> Home .jsx
+// import React from "react";
+// import "./Home.css"; // our normal CSS file
+// import iphone_image from '../assets/iphone__17.jpeg'
+// import samsung from '../assets/samsung.jpg'
+// import iphone_16 from '../assets/iphone__16.jpeg'
+// import googlePixel from '../assets/googlePixel.jpeg'
+// const Home = () => {
+//   return (
+//     <div style={{padding:"20px", display:"flex" , justifyContent:"center"}}>
+
+//       <div className="product-card" style={{margin: '20px'}}>
+//         <div className="product-image" >
+//           <img
+//             src={iphone_image}
+//             alt="iPhone 17 Pro"
+//           />
+//         </div>
+
+//         <div className="product-info" >
+//           <h2 className="product-title">
+//             iPhone 17 Pro 1 TB: 6.3″ Display, A19 Pro Chip, 120Hz, Cosmic Orange
+//           </h2>
+//           <p className="product-rating">⭐ 4.7 (52 reviews)</p>
+//           <p className="product-price">₹1,74,900</p>
+//           <p className="product-offer">Save extra with No Cost EMI</p>
+//           <p className="product-delivery">Free delivery: 14 - 16 Nov</p>
+//           <button className="add-to-cart-btn">Add to Cart</button>
+//         </div>
+//       </div> 
+
+//        <div className="product-card" style={{margin: '20px'}}>
+//         <div className="product-image" >
+//           <img
+//             src={samsung}
+//             alt="iPhone 17 Pro"
+//           />
+//         </div>
+
+//         <div className="product-info" >
+//           <h2 className="product-title">
+//            Samsung Galaxy Z Fold6 5G Smartphone with Galaxy AI (Silver Shadow, 12GB RAM, 256GB Storage), 50MP High-Resolution Camera, Snapdragon 8 Gen 3, Google Gemini
+//           </h2>
+//           <p className="product-rating">⭐ 4.2 (72 reviews)</p>
+//           <p className="product-price">₹1,09,999</p>
+//           <p className="product-offer" style={{ textDecoration: "line-through" }}>M.R.P.: ₹1,64,999</p>
+//           <p className="product-delivery">Free delivery: 25- 30 Nov</p>
+//           <button className="add-to-cart-btn">Add to Cart</button>
+//         </div>
+//       </div>
+
+//        <div className="product-card" style={{margin: '20px'}}>
+//         <div className="product-image" >
+//           <img
+//             src={iphone_16}
+//             alt="iPhone 17 Pro"
+//           />
+//         </div>
+
+//         <div className="product-info" >
+//           <h2 className="product-title">
+//             iPhone 16 128 GB: 5G Mobile Phone with Camera Control, A18 Chip and a Big Boost in Battery Life. Works with AirPods;          </h2>
+//           <p className="product-rating">⭐ 4.7 (52 reviews)</p>
+//           <p className="product-price">₹66,900</p>
+//           <p className="product-offer" style={{ textDecoration: "line-through" }}>M.R.P :₹79,900</p>
+//           <p className="product-offer">500+ bought in past month</p>
+//           <p className="product-delivery">Free delivery: 14 - 16 Nov</p>
+//           <button className="add-to-cart-btn">Add to Cart</button>
+//         </div>
+//       </div>
+
+//        <div className="product-card" style={{margin: '20px'}}>
+//         <div className="product-image"  >
+//           <img src={googlePixel} alt="iPhone 17 Pro" />
+//         </div>
+
+//         <div className="product-info" >
+//           <h2 className="product-title">
+//            Google Pixel 10 5G (Obsidian, 12GB RAM, 256GB Storage)<br/>Brand: Google
+//           </h2>
+//           <p className="product-rating">⭐ 4.7 (77 reviews)</p>
+//           <p className="product-price">₹69,580</p>
+//           <p className="product-offer" style={{ textDecoration: "line-through" }}>M.R.P :₹79,900</p>
+//           <p className="product-offer">Save extra with No Cost EMI</p>
+//           <p className="product-delivery">Free delivery: 14 - 16 Nov</p>
+//           <button className="add-to-cart-btn">Add to Cart</button>
+//         </div>
+//       </div>
+
+//     </div>
+//   );
+// };
+
+// export default Home;
+====================================================================================================================================
