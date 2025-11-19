@@ -10,12 +10,13 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1 className="logo">ShopEase</h1>
+      <h1 className="logo">ShopEasy</h1>
       <nav className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/cart" className="cart-link">
-          Cart <img src={cart_image} alt="cart image"  style={{height:"18.5px"}}/>
+           {/* <span style={{height:"16.8px"}}>Cart</span>  */}Cart
+          <img src={cart_image} alt="cart image"  style={{height:"12.8px" }}/>
           {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
         </Link>
       </nav>
