@@ -2,7 +2,7 @@ import { useState } from 'react'
 import {  Routes, Route, Navigate } from "react-router-dom";
 import './App.css'
 import Header from './components/Header'
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import About from './pages/About'
@@ -24,7 +24,7 @@ function App() {
         <Route path="/product_details/:id" element={<ProductDetails/>} />
         <Route path="*" element={<Navigate to="/" />} />     {/* any unknown route goes home */}
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </CartProvider>  
     </>
   )
