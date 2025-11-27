@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./Home.css";
+import Clothes  from "./Clothes";
 import { CartContext } from "../context/CartContext";
 import iphone_17_1 from "../assets/iphone_17_1.jpeg";
 import iphone_17_2 from "../assets/iphone_17_2.jpeg";
@@ -45,6 +46,7 @@ const Home = () => {
 
 
   return (
+    <>
     <div style={{ padding: "20px", display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
       {products.map((p, index) => (
         <div key={p.id} className="product-card" style={{ margin: "20px" }}>
@@ -79,8 +81,9 @@ const Home = () => {
           </div>
         </div>
       ))}
-
     </div>
+          <Clothes/>
+    </>
   );
 };
 
