@@ -53,6 +53,12 @@
   object-fit: cover;
   border-radius: 8px;
 }
+.cloth-card img:hover{
+  
+  transform: scale(1.07);
+  transition: 0.2s;
+
+}
 
 .cloth-card p {
   margin-top: 8px;

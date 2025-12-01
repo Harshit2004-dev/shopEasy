@@ -9,11 +9,11 @@
   /* background: #fff; */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+  transition: 0.3s;
 }
+
 .product-image img {
   width: 100%;
   height: auto;

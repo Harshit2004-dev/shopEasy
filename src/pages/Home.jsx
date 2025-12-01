@@ -41,7 +41,7 @@ const Home = () => {
   // handal handal_product_details
   //change
   const handleProductDetails = (product) => {
-    navigate(`/product_details/${product.id}`, { state: { product } });
+    navigate(`/shopEasy/product_details/${product.id}`, { state: { product } });
   };
 
 

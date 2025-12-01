@@ -3,7 +3,7 @@ import { CartContext } from "../context/CartContext";
 import './Cart.css';
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useContext(CartContext);
+  const { cartItems, removeFromCart, increaseQty, decreaseQty } = useContext(CartContext);
 
   if (cartItems.length === 0) {
     return <h2 style={{ textAlign: "center", marginTop: "50px" }}>🛒 Your cart is empty.</h2>;
@@ -12,6 +12,7 @@ const Cart = () => {
   return (
     <div style={{ padding: "20px" }}>
       <h1>Your Cart</h1>
+
       {cartItems.map((item) => (
         <div
           key={item.id}
@@ -25,24 +26,26 @@ const Cart = () => {
           }}
         >
           <img src={item.img} alt={item.name} style={{ width: "80px", borderRadius: "8px" }} />
+
           <div style={{ flex: 1 }}>
             <h3>{item.name}</h3>
             <p>₹{item.price.toLocaleString()}</p>
-            <p>Quantity: {item.quantity}</p>
+
+            {/* Quantity Buttons */}
+            <div className="qty-box">
+              <button onClick={() => decreaseQty(item.id)} className="qty-btn minus">-</button>
+
+              <div className="qty-number">{item.quantity}</div>
+
+              <button onClick={() => increaseQty(item.id)} className="qty-btn plus">+</button>
+            </div>
+
           </div>
-          <button
-            onClick={() => removeFromCart(item.id)}
-            style={{
-              backgroundColor: "red",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              padding: "5px 10px",
-              cursor: "pointer",
-            }}
-          >
+
+          <button onClick={() => removeFromCart(item.id)} className="btn-car">
             Remove
           </button>
+
         </div>
       ))}
     </div>

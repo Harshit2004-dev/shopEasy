@@ -13,8 +13,8 @@ const Header = () => {
       <h1 className="logo">ShopEasy</h1>
       <nav className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/cart" className="cart-link">
+        <Link to="/shopEasy/about">About</Link>
+        <Link to="/shopEasy/cart" className="cart-link">
            {/* <span style={{height:"16.8px"}}>Cart</span>  */}Cart
           <img src={cart_image} alt="cart image"  style={{height:"12.8px" }}/>
           {cartCount > 0 && <span className="cart-count">{cartCount}</span>}

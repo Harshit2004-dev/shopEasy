@@ -81,9 +81,28 @@ export const CartProvider = ({ children }) => {
   // Cart count
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
+  const increaseQty = (id) => {
+  setCartItems((prev) =>
+    prev.map((item) =>
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    )
+  );
+};
+
+const decreaseQty = (id) => {
+  setCartItems((prev) =>
+    prev.map((item) =>
+      item.id === id
+        ? { ...item, quantity: Math.max(1, item.quantity - 1) }
+        : item
+    )
+  );
+};
+
+
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, cartCount }}>
+      value={{ cartItems, addToCart, removeFromCart, cartCount, increaseQty,decreaseQty }}>
       {children}
     </CartContext.Provider>
   );

@@ -8,7 +8,7 @@ import Cart from './pages/Cart'
 import About from './pages/About'
 import ProductDetails from './pages/ProductDetails'
 import { CartProvider } from "./context/CartContext";
-// import { ProductProvider } from "./context/ProductContext";
+import ClothingDetail from './pages/ClothingDetail';
 
 
 function App() {
@@ -19,9 +19,11 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/product_details/:id" element={<ProductDetails/>} />
+        <Route path="/shopEasy/cart" element={<Cart />} />
+        <Route path="/shopEasy/about" element={<About />} />
+        <Route path="/shopEasy/product_details/:id" element={<ProductDetails/>} />
+        <Route path="/shopEasy/clothing/:id" element={<ClothingDetail/>}/>
+
         <Route path="*" element={<Navigate to="/" />} />     {/* any unknown route goes home */}
       </Routes>
       {/* <Footer/> */}
