@@ -1,108 +1,87 @@
-//  // src/context/CartContext.js
-// import React, { createContext, useState } from "react";
-
-// export const CartContext = createContext();
-
-// export const CartProvider = ({ children }) => {
-//   const [cartItems, setCartItems] = useState([]);
-
-//   // Add product to cart (or increase quantity if already there)
-//   const addToCart = (product) => {
-//     setCartItems((prev) => {
-//       const existing = prev.find((item) => item.id === product.id);
-//       if (existing) {
-//         return prev.map((item) =>
-//           item.id === product.id
-//             ? { ...item, quantity: item.quantity + 1 }
-//             : item
-//         );
-//       } else {
-//         return [...prev, { ...product, quantity: 1 }];
-//       }
-//     });
-//   };
-
-//   //  Remove product from cart
-//   const removeFromCart = (id) => {
-//     setCartItems((prev) => prev.filter((item) => item.id !== id));
-//   };
-
-//   //  Count of all items (used in header)
-//   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-
-//   return (
-//     <CartContext.Provider
-//       value={{ cartItems, addToCart, removeFromCart, cartCount }}>
-//       {children}
-//     </CartContext.Provider>
-//   );
-// };
-
-
-// src/context/CartContext.js
 import React, { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-
-  // Load cart from localStorage when app starts
+  // Load cart of logged-in user OR empty
   const [cartItems, setCartItems] = useState(() => {
-    const saved = localStorage.getItem("cartItems");
+    const saved = localStorage.getItem("current_cart");
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Save cart to localStorage whenever it changes
+  // Save cart for logged-in user in their own key
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    const logged = JSON.parse(localStorage.getItem("logged_in_user"));
+
+    if (logged) {
+      localStorage.setItem("cart_" + logged.mobile, JSON.stringify(cartItems));
+
+      // also update current_cart for UI persistence
+      localStorage.setItem("current_cart", JSON.stringify(cartItems));
+    }
   }, [cartItems]);
 
-  // Add product to cart
+  // ➕ Add product
   const addToCart = (product) => {
     setCartItems((prev) => {
-      const existing = prev.find((item) => item.id === product.id);
-      if (existing) {
+      const exists = prev.find((item) => item.id === product.id);
+      if (exists) {
         return prev.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
-      } else {
-        return [...prev, { ...product, quantity: 1 }];
       }
+      return [...prev, { ...product, quantity: 1 }];
     });
   };
 
-  // Remove product
+  // ➖ Remove product
   const removeFromCart = (id) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-  // Cart count
+  // Count items
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
+  // Increase qty
   const increaseQty = (id) => {
-  setCartItems((prev) =>
-    prev.map((item) =>
-      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-    )
-  );
-};
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
 
-const decreaseQty = (id) => {
-  setCartItems((prev) =>
-    prev.map((item) =>
-      item.id === id
-        ? { ...item, quantity: Math.max(1, item.quantity - 1) }
-        : item
-    )
-  );
-};
+  // Decrease qty
+  const decreaseQty = (id) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.max(1, item.quantity - 1) }
+          : item
+      )
+    );
+  };
 
+  // Called from logout → clears only current UI cart
+  const clearCartOnLogout = () => {
+    setCartItems([]);  // UI becomes empty
+    localStorage.removeItem("current_cart"); // remove active cart
+  };
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, cartCount, increaseQty,decreaseQty }}>
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        cartCount,
+        increaseQty,
+        decreaseQty,
+        clearCartOnLogout
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

@@ -1,0 +1,83 @@
+/* Main container */
+.verify-container {
+  /* width: 100%; */
+  min-height: calc(100vh - 80px);
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+/* Card */
+.verify-card {
+  width: 100%;
+  max-width: 350px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Title */
+.verify-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ff6f00;
+  font-weight: 600;
+}
+
+/* Input */
+.verify-input {
+  width: 91%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin-bottom: 20px;
+  font-size: 16px;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.verify-input:focus {
+  border-color: #ff6f00;
+  outline: none;
+}
+
+/* Button */
+.verify-btn {
+  width: 100%;
+  padding: 14px;
+  background: #ff6f00;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.verify-btn:hover {
+  background: #e05f00;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .verify-card {
+    padding: 22px;
+    border-radius: 14px;
+  }
+
+  .verify-title {
+    font-size: 20px;
+  }
+
+  .verify-input,
+  .verify-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+}

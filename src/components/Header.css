@@ -11,6 +11,13 @@
   z-index: 100;
 }
 
+.userlogo{
+  height:20px;
+  width: 20px;
+  padding:5px;
+  border-radius: 50%;
+  background-color: white;
+}
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
@@ -51,6 +58,48 @@
   font-size: 12px;
   font-weight: bold;
 }
+
+/* userlogo and dropdown*/
+.user-section {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 140px;
+  background: white;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;border-radius: 6px;
+
+}
+
+.logout {
+  color: red;
+  font-weight: bold;
+}
+
+/* ============================ */
 
 /* Make header adjust on mobile */
 @media (max-width: 768px) {
