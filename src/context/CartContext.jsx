@@ -69,6 +69,13 @@ export const CartProvider = ({ children }) => {
     setCartItems([]);  // UI becomes empty
     localStorage.removeItem("current_cart"); // remove active cart
   };
+  const refreshCart = () => {
+  const logged = JSON.parse(localStorage.getItem("logged_in_user"));
+  if (logged) {
+    const saved = localStorage.getItem("cart_" + logged.mobile);
+    setCartItems(saved ? JSON.parse(saved) : []);
+  }
+};
 
   return (
     <CartContext.Provider
@@ -79,8 +86,8 @@ export const CartProvider = ({ children }) => {
         cartCount,
         increaseQty,
         decreaseQty,
-        clearCartOnLogout
-      }}
+        clearCartOnLogout,
+      refreshCart      }}
     >
       {children}
     </CartContext.Provider>

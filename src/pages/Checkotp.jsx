@@ -31,9 +31,9 @@
 //     // window.location.href = "/";
 //     navigate("/");
 //     window.location.reload();
-   
+
 //     // or: window.location.reload(); (both work)
-    
+
 //   } else {
 //     alert("Wrong OTP! Try again.");
 //   }
@@ -57,15 +57,16 @@
 // };
 
 // export default VerifyOtp;
-import { useState } from "react";
+import { useState ,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CheckOtp.css";
+import { CartContext } from "../context/CartContext";
 
 
 const VerifyOtp = () => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
-
+  const { refreshCart } = useContext(CartContext);
   const handleVerify = () => {
     const savedOtp = localStorage.getItem("temp_otp");
     const mobile = localStorage.getItem("temp_mobile");
@@ -82,8 +83,10 @@ const VerifyOtp = () => {
       localStorage.removeItem("temp_otp");
       localStorage.removeItem("temp_mobile");
 
+      refreshCart();
       navigate("/");
-      window.location.reload();
+
+      // window.location.reload();
     } else {
       alert("Wrong OTP! Try again.");
     }
