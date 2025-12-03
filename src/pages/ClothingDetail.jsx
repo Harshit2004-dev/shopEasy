@@ -13,6 +13,8 @@ const ClothDetail = () => {
     const product = clothData.find((p) => p.id === Number(id));
 
     const [imageChange, setImageChange] = useState(product.img)
+    const [selectedSize, setSelectedSize] = useState(null);
+
 
     if (!product) return <h2 className="not-found">Product Not Found</h2>;
 
@@ -47,7 +49,14 @@ const ClothDetail = () => {
                 <h3 className="sizes-heading">Available Sizes</h3>
                 <div className="sizes-container">
                     {product.sizes.map((s) => (
-                        <span key={s} className="size-pill">{s}</span>
+                        <span
+                            key={s}
+                            className={`size-pill ${selectedSize === s ? "active-size" : ""}`}
+                            onClick={() => setSelectedSize(s)}
+                        >
+                            {s}
+                        </span>
+
                     ))}
                 </div>
 
@@ -75,15 +84,21 @@ const ClothDetail = () => {
                 <div className="btn-row">
                     <button
                         className="cart-btn"
-                        onClick={() =>
+                        onClick={() => {
+                            if (!selectedSize) {
+                                alert("Please select a size!");
+                                return;
+                            }
+
                             addToCart({
                                 id: product.id,
                                 name: product.title,
                                 price: product.price,
-                                img: product.img,    
-                                //  size: s // main image
-                            })
-                        }
+                                img: product.img,
+                                size: selectedSize,
+                            });
+                        }}
+
                     >
                         Add to Cart
                     </button>

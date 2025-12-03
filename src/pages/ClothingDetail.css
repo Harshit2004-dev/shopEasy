@@ -203,6 +203,26 @@ margin-top: -20px;
     justify-content: flex-start;
   }
 }
+.size-pill {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.size-pill:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* 👇 This applies when size is clicked */
+.active-size {
+  background-color: #333;   /* same as hover */
+  color: #fff;
+  border-color: #333;
+}
+
 
 /* Small screens (mobile) */
 @media (max-width: 600px) {

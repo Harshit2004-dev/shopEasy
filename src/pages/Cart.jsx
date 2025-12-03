@@ -30,19 +30,24 @@ const Cart = () => {
           <div style={{ flex: 1 }}>
             <h3>{item.name}</h3>
             <p>₹{item.price.toLocaleString()}</p>
+            {item.size && (
+              <p>Size: {item.size}</p>
+            )}
+      
+
 
             {/* Quantity Buttons */}
             <div className="qty-box">
-              <button onClick={() => decreaseQty(item.id)} className="qty-btn minus">-</button>
+              <button onClick={() => decreaseQty(item.id,item.size)} className="qty-btn minus">-</button>
 
               <div className="qty-number">{item.quantity}</div>
 
-              <button onClick={() => increaseQty(item.id)} className="qty-btn plus">+</button>
+              <button onClick={() => increaseQty(item.id,item.size)} className="qty-btn plus">+</button>
             </div>
 
           </div>
 
-          <button onClick={() => removeFromCart(item.id)} className="btn-car">
+          <button onClick={() => removeFromCart(item.id,item.size)} className="btn-car">
             Remove
           </button>
 
