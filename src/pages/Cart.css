@@ -58,6 +58,19 @@
   font-size: 16px;
 }
 
+.buy-btn {
+  background: #1e2a3a; /* dark blue like header */
+  padding: 12px 25px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 120px;
+  align-items: center  ;
+}
+
 /* -----------------------------------------------------
    RESPONSIVE DESIGN
 ----------------------------------------------------- */

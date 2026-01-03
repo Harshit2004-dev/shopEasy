@@ -1,0 +1,134 @@
+.profile-page {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eef3e8;
+}
+
+.profile-card {
+  width: 400px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  padding: 30px;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.avatar {
+  width: 75px;
+  height: 75px;
+  background: #1d3557;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: auto;
+}
+
+.profile-header h2 {
+  margin: 12px 0 5px;
+}
+
+.role {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.profile-info {
+  margin-top: 15px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+.logout-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background: #1d3557;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  width: 350px;
+  border-radius: 12px;
+}
+
+.modal-content h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.save-btn {
+  background: #2a9d8f;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+}
+
+.cancel-btn {
+  background: #e63946;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+}

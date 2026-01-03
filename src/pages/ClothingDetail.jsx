@@ -103,7 +103,7 @@ const ClothDetail = () => {
                         Add to Cart
                     </button>
 
-                    <button className="buy-btn">Buy Now</button>
+                    {/* <button className="buy-btn">Buy Now</button> */}
                 </div>
             </div>
         </div>
