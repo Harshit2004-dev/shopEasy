@@ -48,6 +48,20 @@ const About = () => {
             <p>We’re committed to reducing waste and using eco-friendly packaging.</p>
           </div>
         </div>
+         <div className="values-grid" style={{marginTop:'25px'}}>
+          <div className="value-card">
+            <h3>🏍 Fast Delivery</h3>
+            <p>We ensure quick and reliable delivery so your favorite products reach you on time, every time.</p>
+          </div>
+          <div className="value-card">
+            <h3>💸 Secure Payments</h3>
+            <p>Your transactions are protected with trusted and encrypted payment gateways for a safe shopping experience.</p>
+          </div>
+          <div className="value-card">
+            <h3>🎁 Easy Returns</h3>
+            <p>Not satisfied with a product? Enjoy hassle-free returns and quick refunds with our simple return policy.</p>
+          </div>
+        </div>
       </section>
     </div>
   );

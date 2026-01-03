@@ -12,7 +12,8 @@ import ClothingDetail from './pages/ClothingDetail';
 import Login from './pages/Login';
 import Checkotp from './pages/Checkotp';
 import ProfileUser from './pages/ProfileUser';
-
+import Checkout from './pages/Checkout';
+import OrderSucces  from './pages/Ordersucces';
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
           <Route path="/shopEasy/login" element={<Login />} />
           <Route path="/shopEasy/verify-otp" element={<Checkotp />} />
           <Route path="/shopEasy/profile" element={<ProfileUser/>} />
+          <Route path='/shopEasy/checkout' element={<Checkout/>}/>
+          <Route path='/shopEasy/order-success' element={<OrderSucces/>}/>
 
 
           <Route path="*" element={<Navigate to="/" />} />     {/* any unknown route goes home */}
